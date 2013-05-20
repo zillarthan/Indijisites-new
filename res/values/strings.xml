@@ -3,6 +3,11 @@
 
     <string name="app_name">IndijiSites</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="menu_legalnotices">Legal Notices</string>
+    <string name="map_not_ready">Map is not ready yet.</string>
+    <string name="desc_bris">This is Brisbane</string>
+    <string name="name_brisbane">Brisbane</string>
+    <string name="Uluru_Title">Uluru</string>
+    <string name="Uluru_Location">Uluru, National Territory</string>
 
 </resources>

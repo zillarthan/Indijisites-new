@@ -139,24 +139,36 @@ containing a value of this type.
         public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int badge_qld=0x7f020000;
+        public static final int custom_info_bubble=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f040006;
+        public static final int action_settings=0x7f04000a;
+        public static final int badge=0x7f040005;
         public static final int hybrid=0x7f040004;
-        public static final int map=0x7f040005;
+        public static final int map=0x7f040008;
+        public static final int menu_legalnotices=0x7f04000b;
         public static final int none=0x7f040000;
         public static final int normal=0x7f040001;
         public static final int satellite=0x7f040002;
+        public static final int snippet=0x7f040009;
         public static final int terrain=0x7f040003;
+        public static final int title=0x7f040006;
+        public static final int top_text=0x7f040007;
     }
     public static final class layout {
         public static final int application_start_up=0x7f030000;
+        public static final int custom_info_contents=0x7f030001;
+        public static final int custom_info_window=0x7f030002;
+        public static final int markers=0x7f030003;
     }
     public static final class menu {
         public static final int start_up=0x7f080000;
     }
     public static final class string {
+        public static final int Uluru_Location=0x7f050018;
+        public static final int Uluru_Title=0x7f050017;
         public static final int action_settings=0x7f050012;
         public static final int app_name=0x7f050011;
         /**   Title for notification shown when GooglePlayServices is unavailable [CHAR LIMIT=70] 
@@ -221,7 +233,10 @@ containing a value of this type.
         find the service-side assets. [CHAR LIMIT=25] 
          */
         public static final int common_signin_button_text_long=0x7f05000d;
-        public static final int hello_world=0x7f050013;
+        public static final int desc_bris=0x7f050015;
+        public static final int map_not_ready=0x7f050014;
+        public static final int menu_legalnotices=0x7f050013;
+        public static final int name_brisbane=0x7f050016;
     }
     public static final class style {
         /** 
