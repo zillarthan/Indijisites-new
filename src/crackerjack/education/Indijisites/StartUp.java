@@ -9,6 +9,7 @@ package crackerjack.education.Indijisites;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Build;
@@ -24,11 +25,14 @@ import android.view.View;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.Interpolator;
+import android.view.Gravity;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.SeekBar;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -38,9 +42,6 @@ import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.GroundOverlay;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
@@ -65,6 +66,18 @@ public class StartUp extends FragmentActivity
 	private static final LatLng ULURU = new LatLng(-25.3517, 131.0307);
 	
 	/** Information that is displayed when the marker is clicked. */
+	
+//new code
+	
+	PopupWindow popUp;
+	LinearLayout layout;
+	TextView tv;
+	LayoutParams params;
+	LinearLayout mainLayout;
+	Button but;
+	boolean click = true;
+	
+	
 	
 	class CustomInfoWindowAdapter implements InfoWindowAdapter {
 		CustomInfoWindowAdapter() {
@@ -249,12 +262,20 @@ public class StartUp extends FragmentActivity
 	}
 	
 	
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.markers);
 		
 		mTopText = (TextView) findViewById(R.id.top_text);
+		//new code here - 12.25am
+		popUp = new PopupWindow(this);
+		layout = new LinearLayout(this);
+		mainLayout = new LinearLayout(this);
+		tv = new TextView(this);
+		
 		
 		setUpMapIfNeeded();
 		
@@ -290,6 +311,22 @@ public class StartUp extends FragmentActivity
 		//We want this method to bring up more information.
 		//Currently it only displays a toast.
 		//This method implements a popup dialog for the onInforWindowClick Method. (I hope)
+		
+		//New code, this code freezes app and phone
+		
+
+							popUp.showAtLocation(mainLayout, Gravity.BOTTOM, 10, 10);
+							popUp.update(50, 50, 300, 80);
+							click = false;
+
+						
+						
+				params = new LayoutParams(LayoutParams.WRAP_CONTENT,
+						LayoutParams.WRAP_CONTENT);
+				layout.setOrientation(LinearLayout.VERTICAL);
+				tv.setText("This is a sample window");
+				layout.addView(tv, params);
+				setContentView(mainLayout);
 	}
 
 
